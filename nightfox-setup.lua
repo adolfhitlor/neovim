@@ -1,3 +1,4 @@
+
 --Use it
 -- Default options
 --require('nightfox').init({
@@ -14,21 +15,22 @@ nightfox.setup({
     terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
     dim_inactive = true,   -- Non focused panes set to alternative background
     styles = {              -- Style to be applied to different syntax groups
-      comments = "NONE",    -- Value is any valid attr-list value `:help attr-list`
+      comments = "underdashed",    -- Value is any valid attr-list value `:help attr-list`
       conditionals = "NONE",
       constants = "NONE",
       functions = "italic,bold",
       keywords = "NONE",
       numbers = "NONE",
       operators = "NONE",
-      strings = "NONE",
+      strings = "italic",
       types = "NONE",
-      variables = "NONE",
+      variables = "italic,bold",
     },
     colors = {
       functions = "#ffffff",
-    }
-    ,
+      variables = "#ff0000",
+      comments = red,
+    },
     inverse = {             -- Inverse highlight for different types
       match_paren = false,
       visual = false,
@@ -43,4 +45,4 @@ nightfox.compile()
 nightfox.clean()
 -- setup must be called before loading
 
---vim.cmd[[colorscheme nightfox]]
+vim.cmd[[colorscheme nightfox]]
